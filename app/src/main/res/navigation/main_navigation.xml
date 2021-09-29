@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/itemHome">
+
+    <fragment
+        android:id="@+id/itemHome"
+        android:name="com.ubaya.a160419009_newskoeid.view.HomeFragment"
+        android:label="Home Screen" >
+        <action
+            android:id="@+id/actionHNewsDetail"
+            app:destination="@id/NewsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemGenre"
+        android:name="com.ubaya.a160419009_newskoeid.view.GenreFragment"
+        android:label="Genre Screen"
+        tools:layout="@layout/fragment_genre" >
+        <action
+            android:id="@+id/actionGenreDetailFragment"
+            app:destination="@id/genreDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.ubaya.a160419009_newskoeid.view.ProfileFragment"
+        android:label="Profile Screen"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/actionDetailProfileFragment"
+            app:destination="@id/profileDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemSearch"
+        android:name="com.ubaya.a160419009_newskoeid.view.SearchFragment"
+        android:label="Search Screen"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/itemWatchLater"
+        android:name="com.ubaya.a160419009_newskoeid.view.WatchLaterFragment"
+        android:label="Watch Later Screen"
+        tools:layout="@layout/fragment_watch_later" >
+        <action
+            android:id="@+id/actionWLNewsDetailFragment"
+            app:destination="@id/NewsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/NewsDetailFragment"
+        android:name="com.ubaya.a160419009_newskoeid.view.NewsDetailFragment"
+        android:label="News Detail Screen"
+        tools:layout="@layout/fragment_news_detail" >
+        <argument
+            android:name="idnews"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/genreDetailFragment"
+        android:name="com.ubaya.a160419009_newskoeid.view.GenreDetailFragment"
+        android:label="Genre Detail Screen"
+        tools:layout="@layout/fragment_genre_detail" />
+    <fragment
+        android:id="@+id/profileDetailFragment"
+        android:name="com.ubaya.a160419009_newskoeid.view.ProfileDetailFragment"
+        android:label="Profile Detail Screen"
+        tools:layout="@layout/fragment_profile_detail" />
+</navigation>

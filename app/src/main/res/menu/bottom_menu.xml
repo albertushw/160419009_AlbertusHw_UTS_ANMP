@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemHome"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
+    <item
+        android:id="@+id/itemSearch"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Search" />
+    <item
+        android:id="@+id/itemGenre"
+        android:icon="@drawable/ic_baseline_theaters_24"
+        android:title="Genre" />
+    <item
+        android:id="@+id/itemWatchLater"
+        android:icon="@drawable/ic_baseline_watch_later_24"
+        android:title="Watch Later" />
+    <item
+        android:id="@+id/itemProfile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profile" />
+</menu>
