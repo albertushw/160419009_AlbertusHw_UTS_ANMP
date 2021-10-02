@@ -30,6 +30,9 @@
         <action
             android:id="@+id/actionDetailProfileFragment"
             app:destination="@id/profileDetailFragment" />
+        <action
+            android:id="@+id/actionFriendsFragment"
+            app:destination="@id/friendsFragment" />
     </fragment>
     <fragment
         android:id="@+id/itemSearch"
@@ -58,10 +61,37 @@
         android:id="@+id/genreDetailFragment"
         android:name="com.ubaya.a160419009_newskoeid.view.GenreDetailFragment"
         android:label="Genre Detail Screen"
-        tools:layout="@layout/fragment_genre_detail" />
+        tools:layout="@layout/fragment_genre_detail" >
+        <argument
+            android:name="nama_genre"
+            android:defaultValue="false"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_genreDetailFragment_to_NewsDetailFragment"
+            app:destination="@id/NewsDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileDetailFragment"
         android:name="com.ubaya.a160419009_newskoeid.view.ProfileDetailFragment"
         android:label="Profile Detail Screen"
-        tools:layout="@layout/fragment_profile_detail" />
+        tools:layout="@layout/fragment_profile_detail" >
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/friendsFragment"
+        android:name="com.ubaya.a160419009_newskoeid.view.FriendsFragment"
+        android:label="fragment_friends"
+        tools:layout="@layout/fragment_friends" >
+        <action
+            android:id="@+id/action_friendsFragment_to_friendsDetailFragment"
+            app:destination="@id/friendsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/friendsDetailFragment"
+        android:name="com.ubaya.a160419009_newskoeid.view.FriendsDetailFragment"
+        android:label="fragment_friends_detail"
+        tools:layout="@layout/fragment_friends_detail" />
 </navigation>

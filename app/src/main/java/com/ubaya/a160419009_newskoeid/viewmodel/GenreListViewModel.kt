@@ -3,14 +3,13 @@ package com.ubaya.a160419009_newskoeid.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.android.volley.RequestQueue
+import com.ubaya.a160419009_newskoeid.model.Genre
 import com.ubaya.a160419009_newskoeid.model.News
 import com.ubaya.a160419009_newskoeid.util.Global
 
-class HomeListViewModel(application: Application):AndroidViewModel(application) {
-
-    val newsLD = MutableLiveData<List<News>>()
+class GenreListViewModel(application: Application):AndroidViewModel(application) {
+    val genreLD = MutableLiveData<List<Genre>>()
     val loadingErrorLD = MutableLiveData<Boolean>()
     val loadingDoneLD = MutableLiveData<Boolean>()
 
@@ -18,7 +17,7 @@ class HomeListViewModel(application: Application):AndroidViewModel(application) 
     private var queue: RequestQueue?= null
 
     fun refresh(){
-        newsLD.value = Global.listOfNews
+        genreLD.value = Global.listOfGenre
         loadingErrorLD.value = false
         loadingDoneLD.value = true
     }

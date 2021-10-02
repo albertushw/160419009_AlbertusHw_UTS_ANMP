@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.ubaya.a160419009_newskoeid.R
 import com.ubaya.a160419009_newskoeid.viewmodel.HomeListViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -31,11 +30,11 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(HomeListViewModel::class.java)
         viewModel.refresh()
 
-        recViewHome.layoutManager = LinearLayoutManager(context)
-        recViewHome.adapter = homeAdapter
+        recViewFriends.layoutManager = LinearLayoutManager(context)
+        recViewFriends.adapter = homeAdapter
 
         refreshHomeLayout.setOnRefreshListener {
-            recViewHome.visibility = View.GONE
+            recViewFriends.visibility = View.GONE
             txtErrorHome.visibility = View.GONE
             progressLoadHome.visibility = View.VISIBLE
             viewModel.refresh()
@@ -58,13 +57,14 @@ class HomeFragment : Fragment() {
             }
         })
 
-        viewModel.loadingLD.observe(viewLifecycleOwner, Observer {
+        viewModel.loadingDoneLD.observe(viewLifecycleOwner, Observer {
             if(it){
-                progressLoadHome.visibility = View.VISIBLE
-                recViewHome.visibility = View.GONE
-            } else {
                 progressLoadHome.visibility = View.GONE
-                recViewHome.visibility = View.VISIBLE
+                recViewFriends.visibility = View.VISIBLE
+            } else {
+                progressLoadHome.visibility = View.VISIBLE
+                recViewFriends.visibility = View.GONE
+
             }
         })
     }

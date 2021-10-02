@@ -16,7 +16,18 @@ data class Profil(
     val email:String?,
     val bod:String?,
     val phone_num:String?,
-    val slogans:String?
+    val slogans:String?,
+    val photo_url:String
+)
+
+data class Friends(
+    val username:String?,
+    val name:String?,
+    val email:String?,
+    val bod:String?,
+    val phone_num:String?,
+    val slogans:String?,
+    val photo_url:String
 )
 
 data class NewsWatchLater(
@@ -27,4 +38,9 @@ data class NewsWatchLater(
     val news: String?,
     val genre: String?,
     val photo_url: String
+)
+
+data class Genre(
+    val nama_genre:String?,
+    val icon_genre:String
 )
