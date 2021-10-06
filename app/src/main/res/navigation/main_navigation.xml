@@ -67,7 +67,7 @@
             android:defaultValue="false"
             app:argType="string" />
         <action
-            android:id="@+id/action_genreDetailFragment_to_NewsDetailFragment"
+            android:id="@+id/actionGenreNewsDetail"
             app:destination="@id/NewsDetailFragment" />
     </fragment>
     <fragment
@@ -83,8 +83,8 @@
     <fragment
         android:id="@+id/friendsFragment"
         android:name="com.ubaya.a160419009_newskoeid.view.FriendsFragment"
-        android:label="fragment_friends"
-        tools:layout="@layout/fragment_friends" >
+        android:label="List Friends Screen"
+        tools:layout="@layout/fragment_friends">
         <action
             android:id="@+id/action_friendsFragment_to_friendsDetailFragment"
             app:destination="@id/friendsDetailFragment" />
@@ -92,6 +92,11 @@
     <fragment
         android:id="@+id/friendsDetailFragment"
         android:name="com.ubaya.a160419009_newskoeid.view.FriendsDetailFragment"
-        android:label="fragment_friends_detail"
-        tools:layout="@layout/fragment_friends_detail" />
+        android:label="Friend Detail Screen"
+        tools:layout="@layout/fragment_friends_detail">
+        <argument
+            android:name="username_friends"
+            android:defaultValue="false"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -16,7 +16,7 @@ class NewsDetailViewModel(application: Application):AndroidViewModel(application
     fun fetch(idNews:String){
         for(i in Global.listOfNews){
             if(i.id == idNews){
-                val result = News(i.id,i.title,i.writer_name,i.rise_date,i.news,i.genre,i.photo_url)
+                val result = News(i.id,i.title,i.writer_name,i.rise_date,i.news,i.genre,i.photo_url,i.is_watch_later)
                 newsLD.value = result
             }
         }

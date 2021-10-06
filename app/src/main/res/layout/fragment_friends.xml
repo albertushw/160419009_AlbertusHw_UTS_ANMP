@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     >
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/refreshHomeLayout"
+        android:id="@+id/refreshFriendsLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.FriendsFragment">
@@ -22,7 +22,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="1dp"
-                android:layout_marginBottom="1dp"
+                android:layout_marginBottom="57dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -11,8 +11,12 @@ import com.ubaya.a160419009_newskoeid.R
 import com.ubaya.a160419009_newskoeid.util.loadImage
 import com.ubaya.a160419009_newskoeid.viewmodel.NewsDetailViewModel
 import com.ubaya.a160419009_newskoeid.viewmodel.ProfileDetailViewModel
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_news_detail.*
 import kotlinx.android.synthetic.main.fragment_profile_detail.*
+import java.util.concurrent.TimeUnit
 
 class ProfileDetailFragment : Fragment() {
     private lateinit var viewModel: ProfileDetailViewModel
@@ -45,6 +49,19 @@ class ProfileDetailFragment : Fragment() {
             txtEmailUpdate.setText(it.email)
             txtPhoneNumberUpdate.setText(it.phone_num)
             imageViewProfil.loadImage(it.photo_url.toString(),progressBarProfilDetail)
+
+            var profil = it
+            btnUpdate.setOnClickListener {
+                Observable.timer(1, TimeUnit.SECONDS)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe {
+                        MainActivity.showNotifikasi("NewsKoe.ID Notification Update",
+                            "Successfull Update Profile : " + profil.name.toString(),
+                            R.drawable.ic_baseline_person_24)
+                    }
+            }
         })
+
     }
 }

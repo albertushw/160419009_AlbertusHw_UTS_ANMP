@@ -30,7 +30,7 @@ class GenreAdapter(val genreList:ArrayList<Genre>):RecyclerView.Adapter<GenreAda
         holder.view.txtGenre.text = genreList[position].nama_genre
         holder.view.imageViewGenre.loadImage(genreList[position].icon_genre.toString(), holder.view.progressBarGenre)
 
-        holder.view.btnViewNews.setOnClickListener {
+        holder.view.btnViewNewsGenre.setOnClickListener {
             val nama_genre = holder.view.txtGenre.text.toString()
             val actions = GenreFragmentDirections.actionGenreDetailFragment(nama_genre)
             Navigation.findNavController(it).navigate(actions)

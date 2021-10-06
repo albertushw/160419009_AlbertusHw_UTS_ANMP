@@ -30,15 +30,15 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(HomeListViewModel::class.java)
         viewModel.refresh()
 
-        recViewFriends.layoutManager = LinearLayoutManager(context)
-        recViewFriends.adapter = homeAdapter
+        recViewHome.layoutManager = LinearLayoutManager(context)
+        recViewHome.adapter = homeAdapter
 
-        refreshHomeLayout.setOnRefreshListener {
-            recViewFriends.visibility = View.GONE
+        refreshFriendsLayout.setOnRefreshListener {
+            recViewHome.visibility = View.GONE
             txtErrorHome.visibility = View.GONE
             progressLoadHome.visibility = View.VISIBLE
             viewModel.refresh()
-            refreshHomeLayout.isRefreshing = false
+            refreshFriendsLayout.isRefreshing = false
         }
 
         observeViewModel()
@@ -60,10 +60,10 @@ class HomeFragment : Fragment() {
         viewModel.loadingDoneLD.observe(viewLifecycleOwner, Observer {
             if(it){
                 progressLoadHome.visibility = View.GONE
-                recViewFriends.visibility = View.VISIBLE
+                recViewHome.visibility = View.VISIBLE
             } else {
                 progressLoadHome.visibility = View.VISIBLE
-                recViewFriends.visibility = View.GONE
+                recViewHome.visibility = View.GONE
 
             }
         })

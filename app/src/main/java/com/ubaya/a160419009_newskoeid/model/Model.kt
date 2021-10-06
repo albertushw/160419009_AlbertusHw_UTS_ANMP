@@ -7,7 +7,8 @@ data class News(
     val rise_date:String?,
     val news: String?,
     val genre: String?,
-    val photo_url: String
+    val photo_url: String?,
+    val is_watch_later: String?
 )
 
 data class Profil(
@@ -30,15 +31,6 @@ data class Friends(
     val photo_url:String
 )
 
-data class NewsWatchLater(
-    val id:String?,
-    val title:String?,
-    val writer_name:String?,
-    val rise_date:String?,
-    val news: String?,
-    val genre: String?,
-    val photo_url: String
-)
 
 data class Genre(
     val nama_genre:String?,
